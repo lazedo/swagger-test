@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "metaflow.hold",
+    "description": "hold metaflow schema",
+    "properties": {
+        "children": {
+            "$ref": "metaflow_children"
+        },
+        "data": {
+            "properties": {
+                "moh_aleg": {
+                    "type": "string"
+                },
+                "moh_bleg": {
+                    "type": "string"
+                },
+                "unhold_key": {
+                    "default": "1",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "module": {
+            "enum": [
+                "hold"
+            ]
+        }
+    },
+    "required": [
+        "module",
+        "data"
+    ],
+    "type": "object"
+}

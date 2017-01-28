@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "metaflow.audio_level",
+    "description": "audio_level metaflow schema",
+    "properties": {
+        "children": {
+            "$ref": "metaflow_children"
+        },
+        "data": {
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "level": {
+                    "type": "string"
+                },
+                "mode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action"
+            ],
+            "type": "object"
+        },
+        "module": {
+            "enum": [
+                "audio_level"
+            ],
+            "type": "string"
+        }
+    },
+    "required": [
+        "module",
+        "data"
+    ],
+    "type": "object"
+}

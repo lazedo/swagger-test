@@ -1,0 +1,98 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "ledgers",
+    "description": "ledgers document",
+    "properties": {
+        "account": {
+            "description": "Account info",
+            "properties": {
+                "id": {
+                    "description": "Account ID",
+                    "required": false,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Account name",
+                    "required": false,
+                    "type": "string"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "amount": {
+            "description": "Ledger amount",
+            "minimum": 1,
+            "required": false,
+            "type": "integer"
+        },
+        "description": {
+            "description": "Useful description for ledger",
+            "required": false,
+            "type": "string"
+        },
+        "metadata": {
+            "description": "Metadata for ledger document",
+            "required": false,
+            "type": "object"
+        },
+        "period": {
+            "description": "Period of ledger",
+            "properties": {
+                "end": {
+                    "description": "Period end",
+                    "required": false,
+                    "type": "integer"
+                },
+                "start": {
+                    "description": "Period start",
+                    "required": false,
+                    "type": "integer"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "source": {
+            "description": "Origin of ledger",
+            "properties": {
+                "id": {
+                    "description": "Source ID",
+                    "required": true,
+                    "type": "string"
+                },
+                "service": {
+                    "description": "Source service",
+                    "required": true,
+                    "type": "string"
+                }
+            },
+            "required": true,
+            "type": "object"
+        },
+        "usage": {
+            "description": "Usage for ledger",
+            "properties": {
+                "quantity": {
+                    "description": "Usage quantity",
+                    "required": true,
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "Usage type",
+                    "required": true,
+                    "type": "string"
+                },
+                "unit": {
+                    "description": "Usage unit",
+                    "required": true,
+                    "type": "string"
+                }
+            },
+            "required": true,
+            "type": "object"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

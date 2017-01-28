@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "lists",
+    "description": "Schema for a match list",
+    "properties": {
+        "description": {
+            "description": "A friendly list description",
+            "maxLength": 128,
+            "minLength": 1,
+            "required": false,
+            "type": "string"
+        },
+        "name": {
+            "description": "A friendly match list name",
+            "maxLength": 128,
+            "minLength": 1,
+            "required": true,
+            "type": "string"
+        },
+        "org": {
+            "description": "Full legal name of the organization",
+            "required": false,
+            "type": "string"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "metaflow.tts",
+    "description": "tts metaflow schema",
+    "properties": {
+        "children": {
+            "$ref": "metaflow_children"
+        },
+        "data": {
+            "properties": {
+                "engine": {
+                    "default": "flite",
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "leg": {
+                    "default": "self",
+                    "type": "string"
+                },
+                "terminators": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "voice": {
+                    "default": "female",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text"
+            ],
+            "type": "object"
+        },
+        "module": {
+            "enum": [
+                "tts"
+            ]
+        }
+    },
+    "required": [
+        "module",
+        "data"
+    ],
+    "type": "object"
+}

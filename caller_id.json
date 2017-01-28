@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "caller_id",
+    "description": "Defines caller ID settings based on the type of call being made",
+    "properties": {
+        "emergency": {
+            "description": "The caller ID used when a resource is flagged as 'emergency'",
+            "properties": {
+                "name": {
+                    "description": "The caller id name for the object type",
+                    "maxLength": 35,
+                    "required": false,
+                    "type": "string"
+                },
+                "number": {
+                    "description": "The caller id name for the object type",
+                    "maxLength": 35,
+                    "required": false,
+                    "type": "string"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "external": {
+            "description": "The default caller ID used when dialing external numbers",
+            "properties": {
+                "name": {
+                    "description": "The caller id name for the object type",
+                    "maxLength": 35,
+                    "required": false,
+                    "type": "string"
+                },
+                "number": {
+                    "description": "The caller id name for the object type",
+                    "maxLength": 35,
+                    "required": false,
+                    "type": "string"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "internal": {
+            "description": "The default caller ID used when dialing internal extensions",
+            "properties": {
+                "name": {
+                    "description": "The caller id name for the object type",
+                    "maxLength": 35,
+                    "required": false,
+                    "type": "string"
+                },
+                "number": {
+                    "description": "The caller id name for the object type",
+                    "maxLength": 35,
+                    "required": false,
+                    "type": "string"
+                }
+            },
+            "required": false,
+            "type": "object"
+        }
+    },
+    "required": false,
+    "type": "object"
+}

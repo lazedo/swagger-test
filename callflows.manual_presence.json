@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "callflows.manual_presence",
+    "description": "Validator for the Manual Presence callflow action",
+    "properties": {
+        "presence_id": {
+            "description": "The Presence ID to send a presence notification about",
+            "required": true,
+            "type": "string"
+        },
+        "status": {
+            "default": "idle",
+            "description": "The status to update to",
+            "enum": [
+                "idle",
+                "ringing",
+                "busy"
+            ],
+            "required": false,
+            "type": "string"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

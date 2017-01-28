@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "callflows.collect_dtmf",
+    "description": "Validator for the Collect DTMF callflow element",
+    "properties": {
+        "collection_name": {
+            "description": "Store collected DTMF in a named key",
+            "required": false,
+            "type": "string"
+        },
+        "interdigit_timeout": {
+            "description": "How long, in milliseconds, to wait for the next DTMF",
+            "minimum": 1,
+            "required": false,
+            "type": "integer"
+        },
+        "max_digits": {
+            "default": 1,
+            "description": "How many DTMFs to collect from the caller",
+            "minimum": 1,
+            "required": false,
+            "type": "integer"
+        },
+        "terminator": {
+            "default": "#",
+            "description": "What DTMF will terminate collection before the timeout occurs",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "0",
+                "#",
+                "*"
+            ],
+            "required": false,
+            "type": "string"
+        },
+        "terminators": {
+            "description": "What DTMFs will terminate collection before the timeout occurs",
+            "items": {
+                "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "0",
+                    "#",
+                    "*"
+                ],
+                "type": "string"
+            },
+            "required": false,
+            "type": "array",
+            "uniqueItems": true
+        },
+        "timeout": {
+            "default": 5000,
+            "description": "How long, in milliseconds, to wait for the first DTMF",
+            "minimum": 1,
+            "required": false,
+            "type": "integer"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

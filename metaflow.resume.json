@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "metaflow.resume",
+    "description": "resume metaflow schema",
+    "properties": {
+        "children": {
+            "$ref": "metaflow_children"
+        },
+        "data": {
+            "type": "object"
+        },
+        "module": {
+            "enum": [
+                "resume"
+            ]
+        }
+    },
+    "required": [
+        "module"
+    ],
+    "type": "object"
+}

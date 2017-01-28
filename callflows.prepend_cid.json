@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "callflows.prepend_cid",
+    "description": "Validator for the prepend_cid callflow's data object",
+    "properties": {
+        "action": {
+            "default": "prepend",
+            "description": "",
+            "type": "string"
+        },
+        "apply_to": {
+            "default": "original",
+            "description": "",
+            "type": "string"
+        },
+        "caller_id_name_prefix": {
+            "default": "",
+            "description": "",
+            "type": "string"
+        },
+        "caller_id_number_prefix": {
+            "default": "",
+            "description": "",
+            "type": "string"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

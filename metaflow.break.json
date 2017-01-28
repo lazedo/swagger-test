@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "metaflow.break",
+    "additionalProperties": false,
+    "description": "break metaflow schema",
+    "properties": {
+        "children": {
+            "$ref": "metaflow_children"
+        },
+        "data": {
+            "type": "object"
+        },
+        "module": {
+            "enum": [
+                "break"
+            ]
+        }
+    },
+    "required": [
+        "module"
+    ],
+    "type": "object"
+}

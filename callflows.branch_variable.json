@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "callflows.branch_variable",
+    "description": "Validator for the branch_variable callflow's data object",
+    "properties": {
+        "scope": {
+            "default": "custom_channel_vars",
+            "description": "specifies where the variable is defined",
+            "enum": [
+                "account",
+                "custom_channel_vars",
+                "device",
+                "merged",
+                "user"
+            ],
+            "type": "string"
+        },
+        "variable": {
+            "default": "",
+            "description": "specifies the name of variable/property that should be looked up",
+            "required": true,
+            "type": "string"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

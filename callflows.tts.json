@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "callflows.tts",
+    "description": "Validator for the TTS (Text-to-speech) callflow action",
+    "properties": {
+        "engine": {
+            "description": "What TTS engine to use",
+            "enum": [
+                "flite",
+                "ispeech"
+            ],
+            "required": false,
+            "type": "string"
+        },
+        "language": {
+            "default": "en",
+            "description": "The language of the speaker",
+            "required": false,
+            "type": "string"
+        },
+        "text": {
+            "description": "The text to speak",
+            "maxLength": 1000,
+            "minLength": 1,
+            "required": true,
+            "type": "string"
+        },
+        "voice": {
+            "default": "female",
+            "description": "What voice to use when speaking the text",
+            "required": false,
+            "type": "string"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

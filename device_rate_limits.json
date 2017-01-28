@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "device_rate_limits",
+    "additionalProperties": true,
+    "description": "describe limits for SIP requests",
+    "properties": {
+        "per_minute": {
+            "additionalProperties": false,
+            "description": "The limits to apply by a minute",
+            "properties": {
+                "invites": {
+                    "description": "Count for the specified SIP method",
+                    "required": false,
+                    "type": "integer"
+                },
+                "registrations": {
+                    "description": "Count for the specified SIP method",
+                    "required": false,
+                    "type": "integer"
+                },
+                "total_packets": {
+                    "description": "Summary count for all of the SIP methods",
+                    "required": true,
+                    "type": "integer"
+                }
+            },
+            "required": true,
+            "type": "object"
+        },
+        "per_second": {
+            "additionalProperties": false,
+            "description": "The limits to apply by a second",
+            "properties": {
+                "invites": {
+                    "description": "Count for the specified SIP method",
+                    "required": false,
+                    "type": "integer"
+                },
+                "registrations": {
+                    "description": "Count for the specified SIP method",
+                    "required": false,
+                    "type": "integer"
+                },
+                "total_packets": {
+                    "description": "Summary count for all of the SIP methods",
+                    "required": true,
+                    "type": "integer"
+                }
+            },
+            "required": true,
+            "type": "object"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

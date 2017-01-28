@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "allotments",
+    "description": "",
+    "patternProperties": {
+        "^\\w+$": {
+            "properties": {
+                "amount": {
+                    "minimum": 0,
+                    "required": true,
+                    "type": "integer"
+                },
+                "cycle": {
+                    "enum": [
+                        "minutely",
+                        "hourly",
+                        "daily",
+                        "weekly",
+                        "monthly"
+                    ],
+                    "required": true,
+                    "type": "string"
+                },
+                "group_consume": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "required": false,
+                    "type": "array"
+                },
+                "increment": {
+                    "minimum": 1,
+                    "required": false,
+                    "type": "integer"
+                },
+                "minimum": {
+                    "minimum": 0,
+                    "required": false,
+                    "type": "integer"
+                },
+                "no_consume_time": {
+                    "minimum": 0,
+                    "required": false,
+                    "type": "integer"
+                }
+            }
+        },
+        "description": "Allotment object",
+        "required": false,
+        "type": "object"
+    },
+    "required": true,
+    "type": "object"
+}

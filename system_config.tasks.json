@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "system_config.tasks",
+    "description": "Schema for tasks system_config",
+    "properties": {
+        "aging_expiry_d": {
+            "default": 90,
+            "description": "tasks aging expiry in days",
+            "type": "integer"
+        },
+        "browse_dbs_interval_s": {
+            "default": 86400,
+            "description": "tasks browse dbs interval in seconds",
+            "type": "integer"
+        },
+        "crawler_delay_time_ms": {
+            "default": 60000,
+            "description": "tasks crawler delay time in milliseconds",
+            "type": "integer"
+        },
+        "crawler_timer_ms": {
+            "default": 86400000,
+            "description": "tasks crawler timer in milliseconds",
+            "type": "integer"
+        },
+        "cycle_delay_time_ms": {
+            "default": 300000,
+            "description": "tasks cycle delay time in milliseconds",
+            "type": "integer"
+        },
+        "discovery_expiry_d": {
+            "default": 1,
+            "description": "tasks discovery expiry in days",
+            "type": "integer"
+        },
+        "interaccount_delay_ms": {
+            "default": 10000,
+            "description": "tasks interaccount delay in milliseconds",
+            "type": "integer"
+        },
+        "low_balance_repeat_s": {
+            "default": 86400,
+            "description": "tasks low balance repeat in seconds",
+            "type": "integer"
+        },
+        "send_progress_after_processed": {
+            "default": 1000,
+            "description": "tasks send progress after processed",
+            "type": "integer"
+        },
+        "should_archive_modbs": {
+            "default": false,
+            "description": "tasks should archive modbs",
+            "type": "boolean"
+        },
+        "should_crawl_for_first_occurrence": {
+            "default": true,
+            "description": "tasks should crawl for first occurrence",
+            "type": "boolean"
+        },
+        "should_crawl_for_low_balance": {
+            "default": true,
+            "description": "tasks should crawl for low balance",
+            "type": "boolean"
+        },
+        "soft_delete_pause_ms": {
+            "default": 10000,
+            "description": "tasks soft delete pause in milliseconds",
+            "type": "integer"
+        },
+        "unfinished_port_request_lifetime_s": {
+            "default": 2592000,
+            "description": "tasks unfinished port request lifetime in seconds",
+            "type": "integer"
+        },
+        "wait_after_row_ms": {
+            "default": 500,
+            "description": "tasks wait after row in milliseconds",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}

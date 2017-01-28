@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "system_config.cdr",
+    "description": "Schema for cdr system_config",
+    "properties": {
+        "ignore_apps": {
+            "default": [
+                "milliwatt"
+            ],
+            "description": "cdr ignore apps",
+            "type": "array"
+        },
+        "ignore_loopback_bowout": {
+            "default": true,
+            "description": "cdr ignore loopback bowout",
+            "type": "boolean"
+        },
+        "store_anonymous": {
+            "default": false,
+            "description": "cdr store anonymous",
+            "type": "boolean"
+        },
+        "v3_migrate_num_months": {
+            "default": 4,
+            "description": "cdr v3 migrate num months",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}

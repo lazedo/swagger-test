@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "domain_hosts",
+    "additionalProperties": false,
+    "description": "Domain host settings for white-labelling",
+    "patternProperties": {
+        ".*[\\{]{2}domain[\\}]{2}.*": {
+            "description": "White-label template for hostname",
+            "properties": {
+                "mapping": {
+                    "description": "List of hosts or IPs this host should resolve to",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "required": true,
+                    "type": "array"
+                },
+                "name": {
+                    "description": "Human-friendly name of the Host",
+                    "required": true,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

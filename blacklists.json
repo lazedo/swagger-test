@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "blacklists",
+    "description": "Schema for a blacklists",
+    "properties": {
+        "name": {
+            "description": "A friendly name for the temporal rule set",
+            "maxLength": 128,
+            "minLength": 1,
+            "required": true,
+            "type": "string"
+        },
+        "numbers": {
+            "default": {},
+            "description": "Map of caller id number to block",
+            "properties": {},
+            "required": false,
+            "type": "object"
+        }
+    },
+    "required": true,
+    "type": "object"
+}

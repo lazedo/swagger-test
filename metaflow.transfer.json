@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "metaflow.transfer",
+    "description": "transfer metaflow schema",
+    "properties": {
+        "children": {
+            "$ref": "metaflow_children"
+        },
+        "data": {
+            "properties": {
+                "Transfer-Type": {
+                    "default": "attended",
+                    "type": "string"
+                },
+                "captures": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "module": {
+            "enum": [
+                "transfer"
+            ]
+        }
+    },
+    "required": [
+        "module",
+        "data"
+    ],
+    "type": "object"
+}

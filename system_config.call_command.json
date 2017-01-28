@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "system_config.call_command",
+    "description": "Schema for call_command system_config",
+    "properties": {
+        "application_timeout": {
+            "default": 500000,
+            "description": "call_command application timeout",
+            "type": "integer"
+        },
+        "bridge_timeout_extended_ms": {
+            "default": 20000,
+            "description": "call_command extended bridge timeout in ms",
+            "type": "integer"
+        },
+        "collect_timeout": {
+            "default": 5000,
+            "description": "call_command collect timeout",
+            "type": "integer"
+        },
+        "digit_timeout": {
+            "default": 3000,
+            "description": "call_command digit timeout",
+            "type": "integer"
+        },
+        "interdigit_timeout": {
+            "default": 2000,
+            "description": "call_command interdigit timeout",
+            "type": "integer"
+        },
+        "message_timeout": {
+            "default": 5000,
+            "description": "call_command message timeout",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "system_config.token_buckets",
+    "description": "Schema for token_buckets system_config",
+    "properties": {
+        "inactivity_timeout_s": {
+            "default": 600,
+            "description": "token_buckets inactivity timeout in seconds",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}

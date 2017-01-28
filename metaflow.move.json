@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "_id": "metaflow.move",
+    "description": "move metaflow schema",
+    "properties": {
+        "children": {
+            "$ref": "metaflow_children"
+        },
+        "data": {
+            "properties": {
+                "auto_answer": {
+                    "default": false,
+                    "type": "boolean"
+                },
+                "device_id": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "module": {
+            "enum": [
+                "move"
+            ]
+        }
+    },
+    "required": [
+        "module",
+        "data"
+    ],
+    "type": "object"
+}

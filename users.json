@@ -1,0 +1,462 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "_id": "users",
+    "description": "Schema for a user",
+    "properties": {
+        "call_forward": {
+            "description": "The device call forward parameters",
+            "properties": {
+                "direct_calls_only": {
+                    "default": false,
+                    "description": "Determines if the calls that are not directly sent to the device should be forwarded",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "enabled": {
+                    "default": false,
+                    "description": "Determines if the call forwarding should be used",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "failover": {
+                    "default": false,
+                    "description": "Enable the call-forwarding parameters if the device is offline",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "ignore_early_media": {
+                    "default": true,
+                    "description": "The option to determine if early media from the call forwarded number should ignored",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "keep_caller_id": {
+                    "default": true,
+                    "description": "Determines if the caller id is kept when the call is forwarded, if not the devices caller id is used",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "number": {
+                    "description": "The number to forward calls to",
+                    "maxLength": 35,
+                    "required": false,
+                    "type": "string"
+                },
+                "require_keypress": {
+                    "default": true,
+                    "description": "Determines if the callee is prompted to press 1 to accept the call",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "substitute": {
+                    "default": true,
+                    "description": "Determines if the call forwarding replaces the device",
+                    "required": false,
+                    "type": "boolean"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "call_restriction": {
+            "additionalProperties": {
+                "properties": {
+                    "action": {
+                        "description": "If set to deny all calls of this type will be rejected.  If set to inherit the user/device rules apply",
+                        "enum": [
+                            "inherit",
+                            "deny"
+                        ],
+                        "required": false,
+                        "type": "string"
+                    }
+                },
+                "required": false,
+                "type": "object"
+            },
+            "default": {},
+            "description": "Device level call restrictions for each available number classification",
+            "required": false,
+            "type": "object"
+        },
+        "call_waiting": {
+            "$ref": "call_waiting"
+        },
+        "caller_id": {
+            "$ref": "caller_id",
+            "default": {},
+            "description": "The device caller ID parameters",
+            "required": false,
+            "type": "object"
+        },
+        "contact_list": {
+            "default": {},
+            "description": "Contect List Parameters",
+            "properties": {
+                "exclude": {
+                    "description": "If set to true the device is excluded from the contact list",
+                    "required": false,
+                    "type": "boolean"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "dial_plan": {
+            "$ref": "dialplans",
+            "default": {},
+            "description": "A list of rules used to modify dialed numbers",
+            "required": false,
+            "type": "object"
+        },
+        "directories": {
+            "description": "Provides the mappings for what directory the user is a part of (the key), and what callflow (the value) to invoke if the user is selected by the caller.",
+            "required": false,
+            "type": "object"
+        },
+        "do_not_disturb": {
+            "description": "DND Parameters",
+            "properties": {
+                "enabled": {
+                    "description": "Is do-not-disturb enabled for this user?",
+                    "required": false,
+                    "type": "boolean"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "email": {
+            "description": "The email of the user",
+            "format": "email",
+            "maxLength": 254,
+            "minLength": 1,
+            "required": false,
+            "type": "string"
+        },
+        "enabled": {
+            "default": true,
+            "description": "Determines if the user is currently enabled",
+            "required": false,
+            "type": "boolean"
+        },
+        "feature_level": {
+            "description": "The user level for assigning feature sets",
+            "required": false,
+            "type": "string"
+        },
+        "first_name": {
+            "description": "The first name of the user",
+            "maxLength": 128,
+            "minLength": 1,
+            "required": true,
+            "type": "string"
+        },
+        "hotdesk": {
+            "default": {},
+            "description": "The user hotdesk parameters",
+            "properties": {
+                "enabled": {
+                    "default": false,
+                    "description": "Determines if the user has hotdesking enabled",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "id": {
+                    "description": "The users hotdesk id",
+                    "maxLength": 15,
+                    "required": false,
+                    "type": "string"
+                },
+                "keep_logged_in_elsewhere": {
+                    "default": false,
+                    "description": "Determines if user should be able to login to mutliple phones simultaneously",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "pin": {
+                    "description": "The users hotdesk pin number",
+                    "maxLength": 15,
+                    "minLength": 4,
+                    "required": false,
+                    "type": "string"
+                },
+                "require_pin": {
+                    "default": false,
+                    "description": "Determines if user requires a pin to change the hotdesk state",
+                    "required": false,
+                    "type": "boolean"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "language": {
+            "description": "The language for this user",
+            "required": false,
+            "type": "string"
+        },
+        "last_name": {
+            "description": "The last name of the user",
+            "maxLength": 128,
+            "minLength": 1,
+            "required": true,
+            "type": "string"
+        },
+        "media": {
+            "default": {},
+            "description": "The device media parameters",
+            "properties": {
+                "audio": {
+                    "default": {},
+                    "description": "The audio media parameters",
+                    "properties": {
+                        "codecs": {
+                            "default": [
+                                "PCMU"
+                            ],
+                            "description": "A list of audio codecs the device supports",
+                            "items": {
+                                "enum": [
+                                    "OPUS",
+                                    "CELT@32000h",
+                                    "G7221@32000h",
+                                    "G7221@16000h",
+                                    "G722",
+                                    "speex@32000h",
+                                    "speex@16000h",
+                                    "PCMU",
+                                    "PCMA",
+                                    "G729",
+                                    "GSM",
+                                    "CELT@48000h",
+                                    "CELT@64000h",
+                                    "G722_16",
+                                    "G722_32",
+                                    "CELT_48",
+                                    "CELT_64",
+                                    "Speex",
+                                    "speex"
+                                ],
+                                "type": "string"
+                            },
+                            "required": false,
+                            "type": "array",
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": false,
+                    "type": "object"
+                },
+                "bypass_media": {
+                    "description": "Default bypass media mode",
+                    "enum": [
+                        true,
+                        false,
+                        "auto"
+                    ],
+                    "required": false,
+                    "type": [
+                        "boolean",
+                        "string"
+                    ],
+                    "warning": "The string type is deprecated, please use this as a boolean"
+                },
+                "encryption": {
+                    "default": {},
+                    "description": "Encryption Parameters",
+                    "properties": {
+                        "enforce_security": {
+                            "default": false,
+                            "description": "Is Encryption Enabled?",
+                            "required": false,
+                            "type": "boolean"
+                        },
+                        "methods": {
+                            "default": [],
+                            "description": "Supported Encryption Types",
+                            "items": {
+                                "enum": [
+                                    "zrtp",
+                                    "srtp"
+                                ],
+                                "required": false,
+                                "type": "string"
+                            },
+                            "required": false,
+                            "type": "array"
+                        }
+                    },
+                    "required": false,
+                    "type": "object"
+                },
+                "fax_option": {
+                    "description": "Is T.38 Supported?",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "ignore_early_media": {
+                    "description": "The option to determine if early media from the device should always be ignored",
+                    "required": false,
+                    "type": "boolean"
+                },
+                "progress_timeout": {
+                    "description": "The progress timeout to apply to the device (seconds)",
+                    "required": false,
+                    "type": "integer"
+                },
+                "video": {
+                    "default": {},
+                    "description": "The video media parameters",
+                    "properties": {
+                        "codecs": {
+                            "default": [],
+                            "description": "A list of video codecs the device supports",
+                            "items": {
+                                "enum": [
+                                    "H261",
+                                    "H263",
+                                    "H264",
+                                    "VP8"
+                                ],
+                                "type": "string"
+                            },
+                            "required": false,
+                            "type": "array",
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": false,
+                    "type": "object"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "metaflows": {
+            "$ref": "metaflows",
+            "description": "The device metaflow parameters"
+        },
+        "music_on_hold": {
+            "default": {},
+            "description": "The music on hold parameters used if not a property of the device owner",
+            "properties": {
+                "media_id": {
+                    "description": "The ID of a media object that should be used as the music on hold",
+                    "maxLength": 128,
+                    "required": false,
+                    "type": "string"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "password": {
+            "description": "The GUI login password",
+            "required": false,
+            "type": "string"
+        },
+        "presence_id": {
+            "description": "Static presence ID (used instead of SIP username)",
+            "required": false,
+            "type": "string"
+        },
+        "priv_level": {
+            "default": "user",
+            "description": "The privilege level of the user",
+            "enum": [
+                "user",
+                "admin"
+            ],
+            "required": false,
+            "type": "string"
+        },
+        "profile": {
+            "$ref": "profile",
+            "default": {},
+            "description": "User's profile data",
+            "required": false,
+            "type": "object"
+        },
+        "pronounced_name": {
+            "description": "Name pronounced by user to introduce himself to conference members",
+            "properties": {
+                "media_id": {
+                    "description": "The ID of a media object that should be used as the music on hold",
+                    "maxLength": 128,
+                    "required": false,
+                    "type": "string"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "require_password_update": {
+            "default": false,
+            "description": "UI flag that the user should update their password.",
+            "required": false,
+            "type": "boolean"
+        },
+        "ringtones": {
+            "default": {},
+            "description": "Ringtone Parameters",
+            "properties": {
+                "external": {
+                    "description": "The alert info SIP header added when the call is from internal sources",
+                    "maxLength": 256,
+                    "required": false,
+                    "type": "string"
+                },
+                "internal": {
+                    "description": "The alert info SIP header added when the call is from external sources",
+                    "maxLength": 256,
+                    "required": false,
+                    "type": "string"
+                }
+            },
+            "required": false,
+            "type": "object"
+        },
+        "timezone": {
+            "description": "User's timezone",
+            "required": false,
+            "type": "string"
+        },
+        "username": {
+            "description": "The GUI login username - alpha-numeric, dashes, at symbol, periods, plusses, and underscores allowed",
+            "maxLength": 256,
+            "minLength": 1,
+            "pattern": "^([+@.\\w_-]+)$",
+            "required": false,
+            "type": "string"
+        },
+        "verified": {
+            "default": false,
+            "description": "Determines if the user has been verified",
+            "required": false,
+            "type": "boolean"
+        },
+        "vm_to_email_enabled": {
+            "default": true,
+            "description": "Determines if the user would like voicemails emailed to them",
+            "type": "boolean"
+        },
+        "voicemail": {
+            "properties": {
+                "notify": {
+                    "properties": {
+                        "callback": {
+                            "$ref": "notify.callback"
+                        }
+                    },
+                    "required": false,
+                    "type": "object"
+                }
+            },
+            "required": false,
+            "type": "object"
+        }
+    },
+    "required": true,
+    "type": "object"
+}
