@@ -3,6 +3,9 @@
     "consumes": [
         "application/json"
     ],
+    "produces": [
+        "application/json"
+    ],
     "definitions": {
         "access_lists": {
             "additionalProperties": true,
@@ -40,10 +43,10 @@
             "description": "describe limits for SIP requests",
             "properties": {
                 "account": {
-                    "$ref": "device_rate_limits"
+                    "$ref": "#/definitions/device_rate_limits"
                 },
                 "device": {
-                    "$ref": "device_rate_limits"
+                    "$ref": "#/definitions/device_rate_limits"
                 }
             },
             "required": [
@@ -74,16 +77,16 @@
                     "type": "object"
                 },
                 "call_waiting": {
-                    "$ref": "call_waiting"
+                    "$ref": "#/definitions/call_waiting"
                 },
                 "caller_id": {
-                    "$ref": "caller_id",
+                    "$ref": "#/definitions/caller_id",
                     "default": {},
                     "description": "The account default caller ID parameters",
                     "type": "object"
                 },
                 "dial_plan": {
-                    "$ref": "dialplans",
+                    "$ref": "#/definitions/dialplans",
                     "default": {},
                     "description": "A list of default rules used to modify dialed numbers",
                     "type": "object"
@@ -108,7 +111,7 @@
                     "type": "string"
                 },
                 "metaflows": {
-                    "$ref": "metaflows"
+                    "$ref": "#/definitions/metaflows"
                 },
                 "music_on_hold": {
                     "default": {},
@@ -180,7 +183,7 @@
                         "notify": {
                             "properties": {
                                 "callback": {
-                                    "$ref": "notify.callback"
+                                    "$ref": "#/definitions/notify.callback"
                                 }
                             },
                             "type": "object"
@@ -640,11 +643,11 @@
                     "type": "object"
                 },
                 "flow": {
-                    "$ref": "callflows.action",
+                    "$ref": "#/definitions/callflows.action",
                     "description": "A callflow node defines a module to execute, data to provide to that module, and zero or more children to branch to"
                 },
                 "metaflow": {
-                    "$ref": "metaflows",
+                    "$ref": "#/definitions/metaflows",
                     "description": "Actions applied to a call outside of the normal callflow, initiated by the caller(s)"
                 },
                 "numbers": {
@@ -731,7 +734,7 @@
                     "description": "Children callflows",
                     "patternProperties": {
                         ".+": {
-                            "$ref": "callflows.action"
+                            "$ref": "#/definitions/callflows.action"
                         }
                     },
                     "type": "object"
@@ -3057,10 +3060,10 @@
                     "type": "object"
                 },
                 "call_waiting": {
-                    "$ref": "call_waiting"
+                    "$ref": "#/definitions/call_waiting"
                 },
                 "caller_id": {
-                    "$ref": "caller_id",
+                    "$ref": "#/definitions/caller_id",
                     "default": {},
                     "description": "The device caller ID parameters",
                     "required": false,
@@ -3085,7 +3088,7 @@
                     "type": "string"
                 },
                 "dial_plan": {
-                    "$ref": "dialplans",
+                    "$ref": "#/definitions/dialplans",
                     "default": {},
                     "description": "A list of rules used to modify dialed numbers",
                     "required": false,
@@ -3251,7 +3254,7 @@
                     "type": "object"
                 },
                 "metaflows": {
-                    "$ref": "metaflows",
+                    "$ref": "#/definitions/metaflows",
                     "description": "The device metaflow parameters"
                 },
                 "music_on_hold": {
@@ -3596,7 +3599,7 @@
                     "type": "object"
                 },
                 "CNAME": {
-                    "$ref": "domain_hosts",
+                    "$ref": "#/definitions/domain_hosts",
                     "description": "CNAME records",
                     "required": false,
                     "type": "object"
@@ -4316,7 +4319,7 @@
                     "type": "string"
                 },
                 "profile": {
-                    "$ref": "profile",
+                    "$ref": "#/definitions/profile",
                     "default": {},
                     "description": "Profile data",
                     "required": false,
@@ -4703,49 +4706,49 @@
             "description": "A metaflow node defines a module to execute, data to provide to that module, and one or more children to branch to",
             "oneOf": [
                 {
-                    "$ref": "metaflow.audio_level"
+                    "$ref": "#/definitions/metaflow.audio_level"
                 },
                 {
-                    "$ref": "metaflow.break"
+                    "$ref": "#/definitions/metaflow.break"
                 },
                 {
-                    "$ref": "metaflow.callflow"
+                    "$ref": "#/definitions/metaflow.callflow"
                 },
                 {
-                    "$ref": "metaflow.hangup"
+                    "$ref": "#/definitions/metaflow.hangup"
                 },
                 {
-                    "$ref": "metaflow.hold"
+                    "$ref": "#/definitions/metaflow.hold"
                 },
                 {
-                    "$ref": "metaflow.hold_control"
+                    "$ref": "#/definitions/metaflow.hold_control"
                 },
                 {
-                    "$ref": "metaflow.intercept"
+                    "$ref": "#/definitions/metaflow.intercept"
                 },
                 {
-                    "$ref": "metaflow.move"
+                    "$ref": "#/definitions/metaflow.move"
                 },
                 {
-                    "$ref": "metaflow.play"
+                    "$ref": "#/definitions/metaflow.play"
                 },
                 {
-                    "$ref": "metaflow.record_call"
+                    "$ref": "#/definitions/metaflow.record_call"
                 },
                 {
-                    "$ref": "metaflow.resume"
+                    "$ref": "#/definitions/metaflow.resume"
                 },
                 {
-                    "$ref": "metaflow.say"
+                    "$ref": "#/definitions/metaflow.say"
                 },
                 {
-                    "$ref": "metaflow.sound_touch"
+                    "$ref": "#/definitions/metaflow.sound_touch"
                 },
                 {
-                    "$ref": "metaflow.transfer"
+                    "$ref": "#/definitions/metaflow.transfer"
                 },
                 {
-                    "$ref": "metaflow.tts"
+                    "$ref": "#/definitions/metaflow.tts"
                 }
             ],
             "type": "object"
@@ -4754,7 +4757,7 @@
             "description": "audio_level metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -4791,7 +4794,7 @@
             "description": "break metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "type": "object"
@@ -4811,7 +4814,7 @@
             "description": "callflow metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -4840,7 +4843,7 @@
             "description": "hangup metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "type": "object"
@@ -4860,7 +4863,7 @@
             "description": "hold metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -4893,7 +4896,7 @@
             "description": "hold_control metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -4923,7 +4926,7 @@
             "description": "intercept metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -4968,7 +4971,7 @@
             "description": "move metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -5001,7 +5004,7 @@
             "description": "play metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -5038,7 +5041,7 @@
             "description": "record_call metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -5078,7 +5081,7 @@
             "description": "resume metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "type": "object"
@@ -5098,7 +5101,7 @@
             "description": "say metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -5135,7 +5138,7 @@
             "description": "sound_touch metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -5190,7 +5193,7 @@
             "description": "transfer metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -5223,7 +5226,7 @@
             "description": "tts metaflow schema",
             "properties": {
                 "children": {
-                    "$ref": "metaflow_children"
+                    "$ref": "#/definitions/metaflow_children"
                 },
                 "data": {
                     "properties": {
@@ -5272,7 +5275,7 @@
             "description": "A metaflow child nodes",
             "patternProperties": {
                 ".+": {
-                    "$ref": "metaflow"
+                    "$ref": "#/definitions/metaflow"
                 }
             },
             "type": "object"
@@ -5320,7 +5323,7 @@
                     "description": "A list of static numbers with their flows",
                     "patternProperties": {
                         "^[0-9]+$": {
-                            "$ref": "metaflow"
+                            "$ref": "#/definitions/metaflow"
                         }
                     },
                     "type": "object"
@@ -5330,7 +5333,7 @@
                     "description": "A list of patterns with their flows",
                     "patternProperties": {
                         ".+": {
-                            "$ref": "metaflow"
+                            "$ref": "#/definitions/metaflow"
                         }
                     },
                     "type": "object"
@@ -6727,7 +6730,7 @@
             "description": "Describes services offered to sub-accounts",
             "properties": {
                 "bookkeepers": {
-                    "$ref": "bookkeepers",
+                    "$ref": "#/definitions/bookkeepers",
                     "type": "object"
                 },
                 "description": {
@@ -6824,11 +6827,11 @@
             },
             "properties": {
                 "attachments": {
-                    "$ref": "storage.attachments",
+                    "$ref": "#/definitions/storage.attachments",
                     "description": "Defines where and how to store attachments"
                 },
                 "connections": {
-                    "$ref": "storage.connections",
+                    "$ref": "#/definitions/storage.connections",
                     "description": "Describes alternative connections to use (such as alternative CouchDB instances"
                 },
                 "id": {
@@ -6836,7 +6839,7 @@
                     "type": "string"
                 },
                 "plan": {
-                    "$ref": "storage.plan",
+                    "$ref": "#/definitions/storage.plan",
                     "description": "Describes how to store documents depending on the database or document type"
                 }
             },
@@ -6939,10 +6942,10 @@
                     "description": "Configuration for the supported storage backends",
                     "oneOf": [
                         {
-                            "$ref": "storage.attachment.aws"
+                            "$ref": "#/definitions/storage.attachment.aws"
                         },
                         {
-                            "$ref": "storage.attachment.google_drive"
+                            "$ref": "#/definitions/storage.attachment.google_drive"
                         }
                     ]
                 }
@@ -7044,7 +7047,7 @@
                 "^([a-z,0-9]){32}$": {
                     "oneOf": [
                         {
-                            "$ref": "storage.connection.couchdb"
+                            "$ref": "#/definitions/storage.connection.couchdb"
                         }
                     ]
                 },
@@ -7059,13 +7062,13 @@
             "description": "schema for storage plan",
             "properties": {
                 "account": {
-                    "$ref": "storage.plan.database"
+                    "$ref": "#/definitions/storage.plan.database"
                 },
                 "modb": {
-                    "$ref": "storage.plan.database"
+                    "$ref": "#/definitions/storage.plan.database"
                 },
                 "system": {
-                    "$ref": "storage.plan.database"
+                    "$ref": "#/definitions/storage.plan.database"
                 }
             },
             "type": "object"
@@ -7085,7 +7088,7 @@
             "description": "schema for database storage plan",
             "properties": {
                 "attachments": {
-                    "$ref": "storage.plan.database.attachment"
+                    "$ref": "#/definitions/storage.plan.database.attachment"
                 },
                 "connection": {
                     "type": "string"
@@ -7097,16 +7100,16 @@
                     "additionalProperties": false,
                     "properties": {
                         "call_recording": {
-                            "$ref": "storage.plan.database.document"
+                            "$ref": "#/definitions/storage.plan.database.document"
                         },
                         "fax": {
-                            "$ref": "storage.plan.database.document"
+                            "$ref": "#/definitions/storage.plan.database.document"
                         },
                         "mailbox_message": {
-                            "$ref": "storage.plan.database.document"
+                            "$ref": "#/definitions/storage.plan.database.document"
                         },
                         "media": {
-                            "$ref": "storage.plan.database.document"
+                            "$ref": "#/definitions/storage.plan.database.document"
                         }
                     },
                     "type": "object"
@@ -7132,7 +7135,7 @@
             "description": "schema for document type storage plan",
             "properties": {
                 "attachments": {
-                    "$ref": "storage.plan.database.attachment"
+                    "$ref": "#/definitions/storage.plan.database.attachment"
                 },
                 "connection": {
                     "type": "string"
@@ -12412,10 +12415,10 @@
                     "type": "object"
                 },
                 "call_waiting": {
-                    "$ref": "call_waiting"
+                    "$ref": "#/definitions/call_waiting"
                 },
                 "caller_id": {
-                    "$ref": "caller_id",
+                    "$ref": "#/definitions/caller_id",
                     "default": {},
                     "description": "The device caller ID parameters",
                     "required": false,
@@ -12435,7 +12438,7 @@
                     "type": "object"
                 },
                 "dial_plan": {
-                    "$ref": "dialplans",
+                    "$ref": "#/definitions/dialplans",
                     "default": {},
                     "description": "A list of rules used to modify dialed numbers",
                     "required": false,
@@ -12666,7 +12669,7 @@
                     "type": "object"
                 },
                 "metaflows": {
-                    "$ref": "metaflows",
+                    "$ref": "#/definitions/metaflows",
                     "description": "The device metaflow parameters"
                 },
                 "music_on_hold": {
@@ -12704,7 +12707,7 @@
                     "type": "string"
                 },
                 "profile": {
-                    "$ref": "profile",
+                    "$ref": "#/definitions/profile",
                     "default": {},
                     "description": "User's profile data",
                     "required": false,
@@ -12778,7 +12781,7 @@
                         "notify": {
                             "properties": {
                                 "callback": {
-                                    "$ref": "notify.callback"
+                                    "$ref": "#/definitions/notify.callback"
                                 }
                             },
                             "required": false,
@@ -12852,7 +12855,7 @@
                 "notify": {
                     "properties": {
                         "callback": {
-                            "$ref": "notify.callback"
+                            "$ref": "#/definitions/notify.callback"
                         }
                     },
                     "required": false,
